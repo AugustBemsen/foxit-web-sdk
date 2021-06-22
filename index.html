@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foxit Web SDK Practice</title>
+  <link rel="stylesheet" href="./lib/PDFViewCtrl.css">
+  <script src="./lib/PDFViewCtrl.full.js" charset="utf-8"></script>
+
+  <style>
+    .fv__ui-tab-nav li span {
+      color: #636363;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pdf-viewer"></div>
+
+
+
+  <script>
+    const licenseSN = "Your license SN";
+    const licenseKey = "Your license Key";
+
+    const PDFViewer = PDFViewCtrl.PDFViewer;
+    const pdfViewer = new PDFViewer({
+      libPath: './lib', // the library path of Web SDK.
+      jr: {
+        licenseSN: "XXXXX",
+        licenseKey: "XXXXX",
+      }
+    });
+    pdfViewer.init('#pdf-viewer'); // the div (id="pdf-viewer")
+
+
+    fetch('./JavaScript-for-Kids.pdf').then((res) => {
+      // modify the path to get your pdf
+      res.arrayBuffer().then(function (buffer) {
+        pdfViewer.openPDFByFile(buffer);
+      })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+    "library": "PrintUIXAddon",
+    "i18n": {
+        "ns": "print",
+        "sources": {
+            "zh-CN": "./locales/zh-CN.json",
+            "en-US": "./locales/en-US.json",
+            "ja-JP": "./locales/ja-JP.json"
+        }
+    },
+    "css":[
+    	"./index.css"
+    ]
+}
